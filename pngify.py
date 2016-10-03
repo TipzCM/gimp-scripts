@@ -34,7 +34,7 @@ register(
 		"Leif Stawnyczy",
 		"Leif Stawnyczy",
 		"2016",
-		"<Image>/Image/PNG-ify",
+		"<Image>/Image/AutoArt/PNG-ify",
 		"RGB*, GRAY*",
 		[
 			(PF_FLOAT, "ratio", "Scale image", 1)

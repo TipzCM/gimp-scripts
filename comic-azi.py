@@ -8,7 +8,7 @@ def add_layer_to_image(the_image, name, is_visible, width, height):
 	layer = gimp.Layer(the_image, name, width, height, RGBA_IMAGE, 100, NORMAL_MODE)
 	the_image.add_layer(layer, 0)
 	pdb.gimp_item_set_visible(layer, is_visible)
-	return layer;
+	return layer
 
 def comic_aze(timg, tdrawable, bg_name = "bg", bg_color = "#FFFFFF", bg_visible = True, lineart_name = "lineart", panels_name = "panels", panels_color = "#000000", text_layer_name = "text", has_additional_layers = True, additional_layers = "whites,colours,pupils,skin,clothes1,clothes2,hair,details"):
 	width = tdrawable.width
@@ -68,7 +68,7 @@ register(
 		"Leif Stawnyczy",
 		"Leif Stawnyczy",
 		"2016",
-		"<Image>/Image/Comic-aze",
+		"<Image>/Image/AutoArt/Comic-aze",
 		"RGB*, GRAY*",
 		[
 			(PF_STRING, "bg_name", "Background layer name", "bg"),
