@@ -4,24 +4,6 @@
 import os
 from gimpfu import *
 
-
-def doExport(ratio, image):
-	filename = os.path.splitext(image.filename)[0]
-	#pdb.gimp_message("%s" % filename)
-		
-	width = image.width
-	height = image.height
-		
-	new_image = pdb.gimp_image_duplicate(image)
-	layer = pdb.gimp_image_merge_visible_layers(new_image, CLIP_TO_IMAGE)
-		
-	#resize
-	layer.scale(int(width*ratio), int(height*ratio), 0)
-		
-	pdb.gimp_file_save(new_image, layer, filename + ".png", filename + ".png")
-	pdb.gimp_image_delete(new_image)
-
-
 def cut_paste_all_layers(timg, tdrawable, x_translate = 0, y_translate = 0):
 	#assume rectangles for now for simplicity
 	exists, orig_x, orig_y, width, height = pdb.gimp_selection_bounds(timg)
