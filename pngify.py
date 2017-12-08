@@ -35,7 +35,7 @@ def pngify(timg, tdrawable, ratio = 1, export_all = True):
 register(
 		"python_fu_pngify",
 		"Saves all open images as PNG with specified image ratio",
-		"Saves a;; open images as PNG with specified image ratio",
+		"Saves all open images as PNG with specified image ratio",
 		"Leif Stawnyczy",
 		"Leif Stawnyczy",
 		"2016",
