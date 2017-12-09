@@ -13,6 +13,8 @@ def add_layer_to_image(the_image, name, is_visible, width, height):
 def comic_aze(timg, tdrawable, bg_name = "bg", bg_color = "#FFFFFF", bg_visible = True, lineart_name = "lineart", panels_name = "panels", panels_color = "#000000", text_layer_name = "text", has_additional_layers = True, additional_layers = "whites,colours,pupils,skin,clothes1,clothes2,hair,details"):
 	width = tdrawable.width
 	height = tdrawable.height
+
+	timg.undo_group_start()
 	
 	#pdb.gimp_message("%s" % timg.filename)
 	#pdb.gimp_message("%s" % os.path.basename(timg.filename))
@@ -60,6 +62,8 @@ def comic_aze(timg, tdrawable, bg_name = "bg", bg_color = "#FFFFFF", bg_visible 
 	#save the file
 	filename = os.path.splitext(timg.filename)[0]
 	pdb.gimp_file_save(timg, tdrawable, filename + ".xcf", filename + ".xcf")
+
+	timg.undo_group_end()
 	
 register(
 		"python_fu_comic_aze",
