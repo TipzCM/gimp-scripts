@@ -4,7 +4,7 @@
 import os
 from gimpfu import *
 
-def quick_colour(timg, tdrawable, color_layer = None):
+def quick_colour(timg, tdrawable, color_layer = None, selection_overlap = 3):
     exists, orig_x, orig_y, width, height = pdb.gimp_selection_bounds(timg)
 
     if exists == 0:
@@ -21,8 +21,7 @@ def quick_colour(timg, tdrawable, color_layer = None):
     pdb.gimp_context_set_sample_transparent(1) #allow selecting transparencies
 
     #grow the selection (so that there's no ugly white spaces)
-    # 3 is arbitrary... maybe fixed in a parameter?
-    pdb.gimp_selection_grow(timg, 3)
+    pdb.gimp_selection_grow(timg, selection_overlap)
 
     selection = pdb.gimp_image_get_selection(timg)
 
@@ -51,7 +50,8 @@ register(
 		"<Image>/Image/AutoArt/Quick_Colour",
 		"RGB*, GRAY*",
 		[
-			(PF_LAYER, "color_layer", "Layer to colour", None)
+			(PF_LAYER, "color_layer", "Layer to colour", None),
+            (PF_INT, "selection_overlap", "Enlarge selection (pixles)? A slightly larger selection reduces white space.", 3)
 		],
 		[],
 		quick_colour)
