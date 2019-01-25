@@ -83,7 +83,7 @@ register(
 			(PF_COLOR, "panels_color", "Panels layer color", "#000000"),
 			(PF_STRING, "text_layer_name", "Text layer name", "text"),
 			(PF_BOOL, "has_additional_layers", "Has Additional Layers", False),
-			(PF_STRING, "additional_layers", "Additional layers (comma separated). \n Layers will be added between background layer and lineart layer", "whites,colours,pupils,skin,clothes1,clothes2,hair,details")
+			(PF_STRING, "additional_layers", "Additional layers (comma separated). \n Layers will be added between background layer and lineart layer", "whites,colours,pupils,shines,skin,clothes1,clothes2,hair,details")
 		],
 		[],
 		comic_aze)
