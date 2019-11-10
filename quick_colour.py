@@ -51,7 +51,7 @@ register(
 		"RGB*, GRAY*",
 		[
 			(PF_LAYER, "color_layer", "Layer to colour", None),
-            (PF_INT, "selection_overlap", "Enlarge selection (pixles)? A slightly larger selection reduces white space.", 3)
+            (PF_INT, "selection_overlap", "Enlarge selection (pixles)? A slightly larger selection reduces white space.", 1)
 		],
 		[],
 		quick_colour)
